@@ -1,2 +1,2 @@
 # dotfiles
-Arch Linux Dotfiles sync and backup
+Arch Linux Dotfiles sync/backup
