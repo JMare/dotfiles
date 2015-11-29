@@ -37,7 +37,7 @@ URxvt*scrollBar: false
 *.color4:       base0D
 *.color5:       base0E
 *.color6:       base0C
-*.color7:       base05
+*.color7:       base05 
 
 *.color8:       base03
 *.color9:       base09

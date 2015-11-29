@@ -1,3 +1,7 @@
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id dropbox
-exec_always compton -f
+exec --no-startup-id compton -f
+
+for_window [class="^.*"] border pixel 2
+gaps inner 20
+gaps outer 20
