@@ -4,7 +4,7 @@
 
 "-----------------------COLORS-----------------------
 set background=dark
-colorscheme base16-solarized
+colorscheme solarized
 syntax enable
 highlight NonText ctermbg=none
 hi Normal ctermbg=none
