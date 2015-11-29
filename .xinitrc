@@ -38,7 +38,7 @@ fi
 
 
 #my custom xinitsettings to launch i3
-cat ~/git/dotfiles/.i3/config.base  ~/git/dotfiles/.i3/config.local > ~/.i3/config
+cat ~/git/dotfiles/.i3/config.base  ~/git/dotfiles/.i3/config.x220 > ~/.i3/config
 exec i3
 #shouldnt be nesscasary but is to load my xresources for urxvt
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
