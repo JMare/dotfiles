@@ -27,7 +27,7 @@ URxvt*scrollBar: false
 #define base0F #d33682
 
 *.foreground:   base05
-*.background:   rgba:0000/2b00/3600/c800 !color is 002b36, c8 is opacity 
+*.background:   rgba:0000/2b00/3600/c800
 *.cursorColor:  base05
 
 *.color0:       base00
