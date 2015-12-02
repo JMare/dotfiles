@@ -10,7 +10,8 @@ highlight NonText ctermbg=none "this is needed for compton
 hi Normal ctermbg=none "this is needed for compton
 
 "---------------------UI Stuff---------------------
-set number "show line numbers
+set relativenumber "show line numbers
+set number
 set autoindent "indent on enter 
 set showcmd "show last command
 set cursorline "highlight current line
