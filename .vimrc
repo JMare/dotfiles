@@ -19,6 +19,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'christoomey/vim-tmux-navigator'
+Bundle 'tpope/vim-obsession'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -57,7 +58,7 @@ let mapleader=" " "leader is space
 inoremap jk <esc>
 noremap <leader>s :w<CR>
 noremap <leader>p :CtrlP<CR>
-
+:command Sd SyntasticToggleMode
 "-------------------POWERLINE-----------------
 let $PYTHONPATH="/usr/lib/python3.5/site-packages"
 set laststatus=2
