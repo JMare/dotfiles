@@ -16,7 +16,7 @@ set autoindent "indent on enter
 set showcmd "show last command
 set cursorline "highlight current line
 set wildmenu "autocomplete commands
-set showmatch "match brackets automatically
+set showmatch "match brackets autoatically
 
 "-------------------LEADER----------------------
 let mapleader=" " "leader is space
