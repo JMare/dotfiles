@@ -7,7 +7,6 @@
 
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
-source /usr/share/doc/pkgfile/command-not-found.bash
 
 powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
