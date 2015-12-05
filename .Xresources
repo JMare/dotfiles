@@ -26,7 +26,7 @@ URxvt*scrollBar: false
 #define base0E #6c71c4
 #define base0F #d33682
 
-*.background:   rgba:0000/2b00/3600/c800
+URxvt.background:   rgba:0000/2b00/3600/dddd
 
 *foreground:              #839496
 *fading:                  40
