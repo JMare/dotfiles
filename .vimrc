@@ -20,7 +20,7 @@ Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'tpope/vim-obsession'
-
+Bundle 'chriskempson/base16-vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -38,7 +38,7 @@ filetype plugin indent on    " required
 
 "-----------------------COLORS-----------------------
 set background=dark "this just tells vim what color the terminal is
-colorscheme solarized "from aur
+colorscheme base16-solarized "from aur
 syntax enable
 highlight NonText ctermbg=none "this is needed for compton
 hi Normal ctermbg=none "this is needed for compton
