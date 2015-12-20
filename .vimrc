@@ -39,10 +39,9 @@ filetype plugin indent on    " required
 
 "-----------------------COLORS-----------------------
 set background=dark "this just tells vim what color the terminal is
-colorscheme base16-solarized "from aur
+colorscheme base16-ocean"from aur
+let base16colorspace=256
 syntax enable
-highlight NonText ctermbg=none "this is needed for compton
-hi Normal ctermbg=none "this is needed for compton
 
 "---------------------UI Stuff---------------------
 set relativenumber "show line numbers
