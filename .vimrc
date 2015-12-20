@@ -21,6 +21,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'tpope/vim-obsession'
 Bundle 'chriskempson/base16-vim'
+Bundle 'valloric/youcompleteme'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
