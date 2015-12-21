@@ -9,5 +9,4 @@ alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
 
-eval $(dircolors ~/.dircolors)
 source ~/.shell_prompt.sh
