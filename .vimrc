@@ -44,6 +44,13 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 
+"-------------------LEADER----------------------
+let mapleader=" " "leader is space
+
+inoremap jk <esc>
+noremap <leader>s :w<CR>
+noremap <leader>p :CtrlP<CR>
+:command Sd SyntasticToggleMode
 
 "--jump-----------------COLORS-----------------------
 set background=dark "this just tells vim what color the terminal is
@@ -64,13 +71,6 @@ set showmatch "match brackets autoatically
 set expandtab
 set shiftwidth=4
 set softtabstop=4
-"-------------------LEADER----------------------
-let mapleader=" " "leader is space
-
-inoremap jk <esc>
-noremap <leader>s :w<CR>
-noremap <leader>p :CtrlP<CR>
-:command Sd SyntasticToggleMode
 
 "-------------------AIRLINE-----------------
 set laststatus=2
