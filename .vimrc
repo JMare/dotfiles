@@ -51,7 +51,6 @@ set showcmd "show last command
 set cursorline "highlight current line
 set wildmenu "autocomplete commands
 set showmatch "match brackets autoatically
-
 "-------------------LEADER----------------------
 let mapleader=" " "leader is space
 
