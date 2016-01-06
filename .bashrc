@@ -10,3 +10,4 @@ PS1='[\u@\h \W]\$ '
 
 
 source ~/.shell_prompt.sh
+eval "$(thefuck --alias fuck)"
