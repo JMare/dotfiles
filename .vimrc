@@ -28,6 +28,9 @@ Bundle 'klen/python-mode'
 Bundle 'bling/vim-airline'
 Bundle 'edkolev/tmuxline.vim'
 Bundle 'edkolev/promptline.vim'
+Bundle 'junegunn/goyo.vim'
+Bundle 'reedes/vim-pencil'
+Bundle 'tpope/vim-markdown'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -87,6 +90,14 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 
+"---------------------MARKDOWN SPECIFIC---------------------
+augroup pencil
+    autocmd!
+    autocmd FileType markdown,mkd call pencil#init()
+    autocmd FileType text         call pencil#init({'wrap': 'hard'})
+augroup END
+au! BufRead,BufNewFile *.markdown set filetype=mkd
+au! BufRead,BufNewFile *.md       set filetype=mkd
 "---------------------PYTHON-MODE---------------------
 " Python-mode
 " Activate rope
