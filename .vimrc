@@ -34,6 +34,8 @@ Bundle 'junegunn/goyo.vim'
 Bundle 'reedes/vim-pencil'
 Bundle 'tpope/vim-markdown'
 Bundle 'terryma/vim-multiple-cursors'
+Bundle 'tpope/vim-surround'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
