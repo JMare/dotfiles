@@ -16,3 +16,7 @@ eval "$(thefuck --alias fuck)"
 export PATH=$PATH:$HOME/git/jsbsim/src
 export PATH=$PATH:$HOME/git/ardupilot/Tools/autotest 
 export PATH=/usr/lib/ccache:$PATH
+
+alias nano='vim'
+alias emacs='vim'
+alias please='sudo $(history -p !!)'

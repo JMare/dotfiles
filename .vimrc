@@ -5,6 +5,8 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 filetype plugin indent on
+
+
 "----------------------VUNDLE---------------------------
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -31,6 +33,8 @@ Bundle 'edkolev/promptline.vim'
 Bundle 'junegunn/goyo.vim'
 Bundle 'reedes/vim-pencil'
 Bundle 'tpope/vim-markdown'
+Bundle 'terryma/vim-multiple-cursors'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
