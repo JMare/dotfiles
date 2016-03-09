@@ -27,7 +27,8 @@ Bundle 'tpope/vim-obsession'
 Bundle 'chriskempson/base16-vim'
 Bundle 'valloric/youcompleteme'
 Bundle 'klen/python-mode'
-Bundle 'bling/vim-airline'
+Bundle 'vim-airline/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
 Bundle 'edkolev/tmuxline.vim'
 Bundle 'edkolev/promptline.vim'
 Bundle 'junegunn/goyo.vim'
@@ -35,6 +36,8 @@ Bundle 'reedes/vim-pencil'
 Bundle 'tpope/vim-markdown'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'tpope/vim-surround'
+"this is the best arduino integration I have found
+Bundle '4Evergreen4/vim-hardy'
 
 
 " All of your Plugins must be added before the following line
@@ -60,6 +63,9 @@ inoremap jk <esc>
 noremap <leader>s :w<CR>
 noremap <leader>p :CtrlP<CR>
 :command Sd SyntasticToggleMode
+nnoremap <leader>. :CtrlPTag<cr>
+noremap <leader>ac :ArduinoVerify<CR>
+noremap <leader>au :ArduinoUpload<CR>
 
 "--jump-----------------COLORS-----------------------
 set background=dark "this just tells vim what color the terminal is
@@ -84,6 +90,7 @@ set softtabstop=4
 "-------------------AIRLINE-----------------
 set laststatus=2
 let g:airline_powerline_fonts = 1
+let g:airline_theme = "base16"
 let g:tmuxline_powerline_separators = 1
 "-------------------SYNTASTIC CONFIG-----------------
 set statusline+=%#warningmsg#
