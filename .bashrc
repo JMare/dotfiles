@@ -20,3 +20,12 @@ export PATH=/usr/lib/ccache:$PATH
 alias nano='vim'
 alias emacs='vim'
 alias please='sudo $(history -p !!)'
+
+
+function newc() {
+    mkdir $@
+    cp /home/james/Dropbox/Uni/ECE2071/code/template/Makefile $@/Makefile 
+    touch $@/main.c
+}
+
+export -f newc
