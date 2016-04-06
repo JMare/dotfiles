@@ -31,13 +31,12 @@ Bundle 'vim-airline/vim-airline'
 Bundle 'vim-airline/vim-airline-themes'
 Bundle 'edkolev/tmuxline.vim'
 Bundle 'edkolev/promptline.vim'
-Bundle 'junegunn/goyo.vim'
-Bundle 'reedes/vim-pencil'
-Bundle 'tpope/vim-markdown'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'tpope/vim-surround'
 "this is the best arduino integration I have found
 Bundle '4Evergreen4/vim-hardy'
+Bundle 'vim-pandoc/vim-pandoc'
+Bundle 'vim-pandoc/vim-pandoc-syntax'
 
 
 " All of your Plugins must be added before the following line
@@ -103,14 +102,6 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 
-"---------------------MARKDOWN SPECIFIC---------------------
-augroup pencil
-    autocmd!
-    autocmd FileType markdown,mkd call pencil#init()
-    autocmd FileType text         call pencil#init({'wrap': 'hard'})
-augroup END
-au! BufRead,BufNewFile *.markdown set filetype=mkd
-au! BufRead,BufNewFile *.md       set filetype=mkd
 "---------------------PYTHON-MODE---------------------
 " Python-mode
 " Activate rope
@@ -152,3 +143,6 @@ let g:pymode_syntax_space_errors = g:pymode_syntax_all
 
 " Don't autofold code
 let g:pymode_folding = 0
+
+ let g:pandoc#filetypes#handled = ["pandoc", "markdown"]
+ let g:pandoc#filetypes#pandoc_markdown = 0
