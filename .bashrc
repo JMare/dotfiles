@@ -21,6 +21,8 @@ alias nano='vim'
 alias emacs='vim'
 alias please='sudo $(history -p !!)'
 
+alias ap_waf="/home/james/git/ardupilot/modules/waf/waf-light"
+
 
 function newc() {
     mkdir $@
@@ -31,3 +33,6 @@ function newc() {
 export -f newc
 export PATH=/opt/gcc-arm-none-eabi-4_9-2015q3/bin:$PATH
 export PATH=/home/james/git/ardupilot/Tools/scripts/ardupilot/Tools/autotest:$PATH
+
+export EDITOR="nvim"
+export BROWSER="firefox"
