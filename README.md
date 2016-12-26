@@ -1,2 +1,3 @@
 # dotfiles
-Arch Linux Dotfiles sync/backup
+Debian Dotfiles sync/backup
+Setup for instalation with GNU stow
