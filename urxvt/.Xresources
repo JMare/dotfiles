@@ -1,0 +1,5 @@
+#include ".Xresources.d/base16/base16-ocean-256.Xresources"
+
+URxvt.font: xft:hack:size=10
+URxvt.letterSpace: -1
+URxvt.scrollBar: false
