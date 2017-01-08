@@ -17,6 +17,10 @@ super + Escape
 #
 # bspwm hotkeys
 #
+#
+
+super + d
+    tdrop -a -w 1920 -s dropdown urxvt
 
 # quit bspwm normally
 super + alt + Escape

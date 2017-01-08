@@ -93,3 +93,10 @@ export PATH=/usr/lib/ccache:$PATH
 
 alias cmavnode='/opt/cmavnode/cmavnode'
 alias glogout='/etc/init.d/lightdm restart'
+
+
+export PATH=/opt/gcc-arm-none-eabi-4_9-2015q3/bin:$PATH
+export PATH=/home/james/git/ardupilot/Tools/autotest:$PATH
+
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
