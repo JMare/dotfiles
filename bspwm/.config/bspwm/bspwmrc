@@ -2,13 +2,15 @@
 
 sxhkd &
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor LVDS-1 -d I II III IV 
+bspc monitor HDMI-1 -d V VI VII VIII 
 
 bspc config border_width         2
 bspc config window_gap          12
 bspc config click_to_focus 	true
 
 feh --bg-center $HOME/.wallpaper.png
+nm-applet &
 
 compton --config $HOME/.config/compton.conf &
 $HOME/.config/polybar/launch.sh

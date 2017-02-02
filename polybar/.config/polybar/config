@@ -16,6 +16,7 @@ green = #aec795
 
 
 [bar/Bar]
+monitor = LVDS-1
 bottom = false
 dock = false
 wm-restack = bspwm

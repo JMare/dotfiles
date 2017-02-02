@@ -20,7 +20,7 @@ super + Escape
 #
 
 super + d
-    tdrop -a -w 1920 -s dropdown urxvt
+    tdrop -a -w 1920 -s scratchpad urxvt
 
 # quit bspwm normally
 super + alt + Escape
