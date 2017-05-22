@@ -7,7 +7,7 @@
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -91,8 +91,8 @@ export PATH=$PATH:$HOME/git/jsbsim/src
 export PATH=$PATH:$HOME/git/ardupilot/Tools/autotest
 export PATH=/usr/lib/ccache:$PATH
 
-alias cmavnode='/opt/cmavnode/cmavnode'
 alias glogout='/etc/init.d/lightdm restart'
+alias ip='ip -c'
 
 
 export PATH=/opt/gcc-arm-none-eabi-4_9-2015q3/bin:$PATH
@@ -100,3 +100,5 @@ export PATH=/home/james/git/ardupilot/Tools/autotest:$PATH
 
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+
+source /opt/ros/kinetic/setup.zsh

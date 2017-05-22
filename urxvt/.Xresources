@@ -1,5 +1,18 @@
-#include ".Xresources.d/base16/base16-ocean-256.Xresources"
+#include ".Xresources.d/base16/base16-tomorrow-night-256.Xresources"
+
+Xft.dpi: 110 
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
 
 URxvt.font: xft:hack:size=10
 URxvt.letterSpace: -1
 URxvt.scrollBar: false
+
+URxvt.transparent: true
+URxvt.shading: 20
+
+

@@ -22,6 +22,9 @@ super + Escape
 super + d
     tdrop -a -w 1920 -s scratchpad urxvt
 
+super + x
+    xscreensaver-command --lock
+
 # quit bspwm normally
 super + alt + Escape
 	bspc quit
@@ -143,11 +146,11 @@ XF86AudioMute
 
 # Brightness goes up
 XF86MonBrightnessUp
-    brightnessScript
+    xbacklight -inc 10
 
 # Brightness goes down
 XF86MonBrightnessDown
-    brightnessScript
+    xbacklight -dec 10
 
 # Screen lock
 XF86ScreenSaver
