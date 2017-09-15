@@ -57,8 +57,12 @@ nnoremap <leader>. :CtrlPTag<cr>
 "-------------------COLORS-----------------------
 set t_Co=256
 set background=dark "this just tells vim what color the terminal is
-let base16colorspace=256
-colorscheme base16-tomorrow-night
+
+if filereadable(expand("~/.vimrc_background"))
+    let base16colorspace=256
+    source ~/.vimrc_background
+endif
+
 syntax enable
 set encoding=utf8
 
