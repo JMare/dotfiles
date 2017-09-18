@@ -31,44 +31,40 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     javascript
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      helm
-      auto-completion
-      better-defaults
+     auto-completion
+     c-c++
+     ycmd
+     better-defaults
      emacs-lisp
-      git
-      markdown
-      org
+     git
+     markdown
+     latex
+     rust
+     shell-scripts
+     yaml
+     spotify
+     pandoc
+     tmux
+     org
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
-      spell-checking
-      syntax-checking
-      version-control
-      games
-      semantic
-      c-c++
-      csv
-      python
-      shell-scripts
-      yaml
-      github
-      cscope
-      gtags
-      ranger
-      evil-snipe
+     ;; spell-checking
+     syntax-checking
+     version-control
+     python
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(
-              base16-theme)
+   dotspacemacs-additional-packages '(base16-theme)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -140,15 +136,15 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(base16-tomorrow-night
-                         base16-ocean
+   dotspacemacs-themes '(base16-onedark
+                         spacemacs-dark
                          spacemacs-light)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Hack"
-                               :size 16
+                               :size 18
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -261,8 +257,18 @@ values."
    ;; scrolling overrides the default behavior of Emacs which recenters point
    ;; when it reaches the top or bottom of the screen. (default t)
    dotspacemacs-smooth-scrolling t
-   ;; If non nil line numbers are turned on in all `prog-mode' and `text-mode'
-   ;; derivatives. If set to `relative', also turns on relative line numbers.
+   ;; Control line numbers activation.
+   ;; If set to `t' or `relative' line numbers are turned on in all `prog-mode' and
+   ;; `text-mode' derivatives. If set to `relative', line numbers are relative.
+   ;; This variable can also be set to a property list for finer control:
+   ;; '(:relative nil
+   ;;   :disabled-for-modes dired-mode
+   ;;                       doc-view-mode
+   ;;                       markdown-mode
+   ;;                       org-mode
+   ;;                       pdf-view-mode
+   ;;                       text-mode
+   ;;   :size-limit-kb 1000)
    ;; (default nil)
    dotspacemacs-line-numbers nil
    ;; Code folding method. Possible values are `evil' and `origami'.
@@ -314,8 +320,23 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  (put 'helm-make-build-dir 'safe-local-variable 'stringp)
 
-  (setq c-basic-offset 4)
+  (c-add-style "jm"
+               '((indent-tabs-mode . nil)
+                 (c-basic-offset . 4)
+                 (c-guess-make-offsets-alist
+                  (substatement-open . 0)
+                  (inline-open . 0)
+                  (statement-cont . c-lineup-assignments)
+                  (inextern-lang . 0)
+                  (innamespace .0))))
+
+  (push '(other . "jm") c-default-style)
+
+  (setq-default evil-escape-key-sequence "jk")
+  (setq ycmd-server-command '("python" "/home/james/git/ycmd/ycmd/"))
+  (setq ycmd-force-semantic-completion t)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
