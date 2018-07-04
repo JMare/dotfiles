@@ -43,9 +43,17 @@ values."
      better-defaults
      emacs-lisp
      git
+     semantic
+     javascript
+     html
+     erc
      markdown
      latex
+     bibtex
+     spell-checking
+     ranger
      rust
+     evil-snipe
      shell-scripts
      yaml
      spotify
@@ -59,12 +67,20 @@ values."
      syntax-checking
      version-control
      python
+     mineo-rtags
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(base16-theme)
+   dotspacemacs-additional-packages
+   '(
+     base16-theme
+     editorconfig
+     vue-mode
+     highlight-indent-guides
+     latex-preview-pane
+     )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -334,10 +350,27 @@ you should place your code here."
 
   (push '(other . "jm") c-default-style)
 
+  (add-hook 'c-mode-common-hook 'highlight-indent-guides-mode)
+
   (setq-default evil-escape-key-sequence "jk")
   (setq ycmd-server-command '("python" "/home/james/git/ycmd/ycmd/"))
   (setq ycmd-force-semantic-completion t)
+  (setq highlight-indent-guides-method 'character)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (ghub editorconfig vue-mode edit-indirect ssass-mode vue-html-mode flyspell-correct-helm flyspell-correct auto-dictionary org-ref pdf-tools key-chord ivy tablist helm-bibtex parsebib biblio biblio-core latex-preview-pane powerline spinner ht org-category-capture alert log4e gntp parent-mode multi projectile gitignore-mode fringe-helper git-gutter+ git-gutter seq pos-tip flycheck flx git-commit iedit anzu undo-tree highlight diminish pkg-info let-alist request deferred epl bind-map bind-key packed auctex pythonic f avy async auto-complete popup request-deferred stickyfunc-enhance srefactor smartparens evil ycmd rtags magit hydra dash web-mode web-beautify tagedit slim-mode scss-mode sass-mode pug-mode livid-mode skewer-mode simple-httpd less-css-mode json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc helm-css-scss haml-mode emmet-mode company-web web-completion-data company-tern tern coffee-mode erc-yt erc-view-log erc-social-graph erc-image erc-hl-nicks link-hint info+ hy-mode helm-swoop dumb-jump cmake-ide anaconda-mode goto-chg yasnippet company helm helm-core markdown-mode magit-popup with-editor org-plus-contrib rust-mode s yapfify yaml-mode ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package unfill toml-mode toc-org spotify spaceline smeargle restart-emacs ranger rainbow-delimiters racer pyvenv pytest pyenv-mode py-isort popwin pip-requirements persp-mode pcre2el paradox pandoc-mode ox-pandoc orgit org-projectile org-present org-pomodoro org-download org-bullets open-junk-file neotree mwim move-text mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum live-py-mode linum-relative levenshtein insert-shebang indent-guide hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation highlight-indent-guides hide-comnt help-fns+ helm-themes helm-spotify helm-rtags helm-pydoc helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gh-md fuzzy flycheck-ycmd flycheck-rust flycheck-rtags flycheck-pos-tip flx-ido fish-mode fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-snipe evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav disaster diff-hl define-word dash-functional cython-mode company-ycmd company-statistics company-shell company-rtags company-c-headers company-auctex company-anaconda column-enforce-mode cmake-mode clean-aindent-mode clang-format cargo base16-theme auto-yasnippet auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

@@ -3,19 +3,19 @@
 #xrandr --dpi 120
 sxhkd &
 redshift &
-nm-applet &
-xscreensaver &
+dropbox start&
 
 bspc monitor -d 1 2 3 4 5 6 7 8 9
 
 bspc config border_width         2
 bspc config window_gap          12
 bspc config click_to_focus 	true
+bspc config focus_follows_pointer true
 
 nitrogen --restore &
 
-compton &
-$HOME/.config/polybar/launch.sh
+#compton &
+#$HOME/.config/polybar/launch.sh
 
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true

@@ -1,6 +1,6 @@
-#include ".Xresources.d/base16/base16-tomorrow-night-256.Xresources"
+#include ".Xresources.d/base16/base16-onedark-256.Xresources"
 
-Xft.dpi: 110 
+Xft.dpi: 120
 Xft.autohint: 0
 Xft.lcdfilter: lcddefault
 Xft.hintstyle: hintfull

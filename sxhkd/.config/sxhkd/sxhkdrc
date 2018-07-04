@@ -142,7 +142,7 @@ XF86AudioLowerVolume
 
 # Mutes
 XF86AudioMute
-    amixer set Master toggle
+    amixer -D pulse set Master toggle
 
 # Brightness goes up
 XF86MonBrightnessUp
