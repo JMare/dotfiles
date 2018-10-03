@@ -38,49 +38,38 @@ values."
      ;; ----------------------------------------------------------------
      helm
      auto-completion
-     c-c++
-     ycmd
      better-defaults
-     emacs-lisp
-     git
-     semantic
+     c-c++
      javascript
      html
-     erc
-     markdown
-     latex
-     bibtex
-     spell-checking
      ranger
      rust
      evil-snipe
      shell-scripts
      yaml
-     spotify
-     pandoc
      tmux
+     python
+     emacs-lisp
+     git
+     markdown
      org
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
-     ;; spell-checking
+     spell-checking
      syntax-checking
      version-control
-     python
-     mineo-rtags
+     shell
+     games
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages
-   '(
-     base16-theme
-     editorconfig
-     vue-mode
-     highlight-indent-guides
-     latex-preview-pane
-     )
+   dotspacemacs-additional-packages '(
+                                      vue-mode
+                                      base16-theme
+                                      )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -327,6 +316,12 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+  (setq-default js2-basic-offset 2
+                js-indent-level 2)
+
+  (setq-default c-default-style "bsd")
+  (setq-default c-basic-offset 4)
+  (setq-default tab-width 4)
   )
 
 (defun dotspacemacs/user-config ()
@@ -336,26 +331,6 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  (put 'helm-make-build-dir 'safe-local-variable 'stringp)
-
-  (c-add-style "jm"
-               '((indent-tabs-mode . nil)
-                 (c-basic-offset . 4)
-                 (c-guess-make-offsets-alist
-                  (substatement-open . 0)
-                  (inline-open . 0)
-                  (statement-cont . c-lineup-assignments)
-                  (inextern-lang . 0)
-                  (innamespace .0))))
-
-  (push '(other . "jm") c-default-style)
-
-  (add-hook 'c-mode-common-hook 'highlight-indent-guides-mode)
-
-  (setq-default evil-escape-key-sequence "jk")
-  (setq ycmd-server-command '("python" "/home/james/git/ycmd/ycmd/"))
-  (setq ycmd-force-semantic-completion t)
-  (setq highlight-indent-guides-method 'character)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -367,7 +342,7 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (ghub editorconfig vue-mode edit-indirect ssass-mode vue-html-mode flyspell-correct-helm flyspell-correct auto-dictionary org-ref pdf-tools key-chord ivy tablist helm-bibtex parsebib biblio biblio-core latex-preview-pane powerline spinner ht org-category-capture alert log4e gntp parent-mode multi projectile gitignore-mode fringe-helper git-gutter+ git-gutter seq pos-tip flycheck flx git-commit iedit anzu undo-tree highlight diminish pkg-info let-alist request deferred epl bind-map bind-key packed auctex pythonic f avy async auto-complete popup request-deferred stickyfunc-enhance srefactor smartparens evil ycmd rtags magit hydra dash web-mode web-beautify tagedit slim-mode scss-mode sass-mode pug-mode livid-mode skewer-mode simple-httpd less-css-mode json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc helm-css-scss haml-mode emmet-mode company-web web-completion-data company-tern tern coffee-mode erc-yt erc-view-log erc-social-graph erc-image erc-hl-nicks link-hint info+ hy-mode helm-swoop dumb-jump cmake-ide anaconda-mode goto-chg yasnippet company helm helm-core markdown-mode magit-popup with-editor org-plus-contrib rust-mode s yapfify yaml-mode ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package unfill toml-mode toc-org spotify spaceline smeargle restart-emacs ranger rainbow-delimiters racer pyvenv pytest pyenv-mode py-isort popwin pip-requirements persp-mode pcre2el paradox pandoc-mode ox-pandoc orgit org-projectile org-present org-pomodoro org-download org-bullets open-junk-file neotree mwim move-text mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum live-py-mode linum-relative levenshtein insert-shebang indent-guide hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation highlight-indent-guides hide-comnt help-fns+ helm-themes helm-spotify helm-rtags helm-pydoc helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gh-md fuzzy flycheck-ycmd flycheck-rust flycheck-rtags flycheck-pos-tip flx-ido fish-mode fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-snipe evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav disaster diff-hl define-word dash-functional cython-mode company-ycmd company-statistics company-shell company-rtags company-c-headers company-auctex company-anaconda column-enforce-mode cmake-mode clean-aindent-mode clang-format cargo base16-theme auto-yasnippet auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell))))
+    (xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help treepy graphql vue-mode edit-indirect ssass-mode vue-html-mode evil-ediff yapfify yaml-mode web-mode web-beautify unfill typit mmt toml-mode tagedit sudoku smeargle slim-mode scss-mode sass-mode ranger racer pyvenv pytest pyenv-mode py-isort pug-mode pip-requirements pacmacs orgit org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download mwim mmm-mode markdown-toc magit-gitflow livid-mode skewer-mode simple-httpd live-py-mode less-css-mode json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc insert-shebang hy-mode htmlize helm-pydoc helm-gitignore helm-css-scss helm-company helm-c-yasnippet haml-mode gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gh-md fuzzy flyspell-correct-helm flyspell-correct flycheck-rust flycheck-pos-tip pos-tip flycheck fish-mode evil-snipe evil-magit magit magit-popup git-commit ghub let-alist with-editor emmet-mode disaster diff-hl cython-mode company-web web-completion-data company-tern dash-functional tern company-statistics company-shell company-c-headers company-anaconda company coffee-mode cmake-mode clang-format cargo markdown-mode rust-mode auto-yasnippet yasnippet auto-dictionary anaconda-mode pythonic ac-ispell auto-complete 2048-game ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
