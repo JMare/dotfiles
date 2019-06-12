@@ -9,10 +9,5 @@ Xft.antialias: 1
 Xft.rgba: rgb
 
 URxvt.font: xft:hack:size=10
-URxvt.letterSpace: -1
+#URxvt.letterSpace: -1
 URxvt.scrollBar: false
-
-URxvt.transparent: true
-URxvt.shading: 20
-
-
