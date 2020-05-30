@@ -1,6 +1,6 @@
 #include ".Xresources.d/base16/base16-onedark-256.Xresources"
 
-Xft.dpi: 120
+Xft.dpi: 92
 Xft.autohint: 0
 Xft.lcdfilter: lcddefault
 Xft.hintstyle: hintfull
@@ -8,6 +8,6 @@ Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
 
-URxvt.font: xft:hack:size=10
-#URxvt.letterSpace: -1
+URxvt.font: xft:Hack Nerd Font Mono:pixelsize=12
+URxvt.letterSpace: -1
 URxvt.scrollBar: false
