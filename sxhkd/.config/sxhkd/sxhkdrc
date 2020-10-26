@@ -7,8 +7,8 @@ super + Return
 	urxvt
 
 # program launcher
-super + space
-        rofi -show run -modi run,window -show-icons -sidebar-mode -terminal urxvt
+super + @space
+	dmenu_run
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -17,33 +17,26 @@ super + Escape
 #
 # bspwm hotkeys
 #
-#
 
-super + d
-    tdrop -a -w 1920 -s scratchpad urxvt
-
-super + x
-    xscreensaver-command --lock
-
-# quit bspwm normally
-super + alt + Escape
-	bspc quit
+# quit/restart bspwm
+super + alt + {q,r}
+	bspc {quit,wm -r}
 
 # close and kill
-super + {_,shift + }q
+super + {_,shift + }w
 	bspc node -{c,k}
 
 # alternate between the tiled and monocle layout
 super + m
 	bspc desktop -l next
 
-# if the current node is automatic, send it to the last manual, otherwise pull the last leaf
+# send the newest marked node to the newest preselected node
 super + y
-	bspc query -N -n focused.automatic && bspc node -n last.!automatic || bspc node last.leaf -n focused
+	bspc node newest.marked.local -n newest.!automatic.local
 
-# swap the current node and the biggest node
+# swap the current node and the biggest window
 super + g
-	bspc node -s biggest
+	bspc node -s biggest.window
 
 #
 # state/flags
@@ -54,8 +47,8 @@ super + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags
-super + ctrl + {x,y,z}
-	bspc node -g {locked,sticky,private}
+super + ctrl + {m,x,y,z}
+	bspc node -g {marked,locked,sticky,private}
 
 #
 # focus/swap
@@ -69,9 +62,9 @@ super + {_,shift + }{h,j,k,l}
 super + {p,b,comma,period}
 	bspc node -f @{parent,brother,first,second}
 
-# focus the next/previous node in the current desktop
+# focus the next/previous window in the current desktop
 super + {_,shift + }c
-	bspc node -f {next,prev}.local
+	bspc node -f {next,prev}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}
@@ -126,40 +119,3 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
-
-
-##########################
-#System
-##########################
-
-# Raises volume
-XF86AudioRaiseVolume
-    amixer set Master 2%+
-
-# Lowers volume
-XF86AudioLowerVolume
-    amixer set Master 2%-
-
-# Mutes
-XF86AudioMute
-    amixer -D pulse set Master toggle
-
-# Brightness goes up
-XF86MonBrightnessUp
-    xbacklight -inc 10
-
-# Brightness goes down
-XF86MonBrightnessDown
-    xbacklight -dec 10
-
-# Screen lock
-XF86ScreenSaver
-    blur
-
-# Turns off laptop
-XF86Launch1
-    systemctl poweroff
-
-# Reloads bspwm..don't know if it works
-ctrl + super + r
-    bspc reload
